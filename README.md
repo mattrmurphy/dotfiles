@@ -1,5 +1,26 @@
 # Dotfiles
+These be all my config files. WIP
 
+## Programs
+### [i3](https://i3wm.org/)
+A tiling window manager for Linux distros.
+
+### [Rofi](https://github.com/davatorium/rofi)
+A dmenu replacement, for launching programs.
+
+### [Polybar](https://github.com/polybar/polybar/wiki)
+A highly customizable and extensible status bar.
+
+### [nvim](https://neovim.io/)
+Vim but better
+
+### [Alacritty](https://alacritty.org/)
+Terminal emulator
+
+### [Kitty](https://sw.kovidgoyal.net/kitty/)
+Terminal emulator
+
+---
 ## New Install Setup
 The following steps in this setup will assume a Debian based OS. Proceed accordingly.
 
