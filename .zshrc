@@ -3,7 +3,6 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-
 # Path to golang binary
 export PATH=$PATH:/usr/local/go/bin
 
@@ -101,6 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias git s="git status"
 alias ll="ls -lah"
 
 # Add ~/.local/ to PATH
@@ -110,3 +110,11 @@ export PATH=$HOME/.local/bin:$PATH
 alias uuid="curl -s https://www.uuidgenerator.net/version4/bulk\?amount\=1 | xclip -selection clipboard"
 
 alias open="xdg-open"
+
+# Create an alias for kitty
+alias kitty="~/.local/kitty.app/bin/kitty"
+
+alias vim="nvim"
+
+alias lip="ip -o route get to 8.8.8.8 | sed -n 's/.*src \([0-9.]\+\).*/\1/p'"
+
