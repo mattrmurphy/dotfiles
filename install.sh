@@ -4,11 +4,43 @@
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && chsh -s $(which zsh)
 
 # Copy the zshrc config file to the correct location
-mv ./zsh/.zshrc ~/.zshrc
+cp ./zsh/.zshrc ~/.zshrc
 
 # Source the config file
 source ~/.zshrc
 
-# Add default git branch name and alias
+# Install kitty terminal
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+
+# If on linux OS configure icons and command
+if [ "$OSTYPE" == "linux-gnu"* ] && ! command -v kitty &> /dev/null; then
+		# Create symbolic links to add kitty and kitten to PATH (assuming ~/.local/bin is in
+		# your system-wide PATH)
+		ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
+		# Place the kitty.desktop file somewhere it can be found by the OS
+		cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+		# If you want to open text files and images in kitty via your file manager also add the kitty-open.desktop file
+		cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
+		# Update the paths to the kitty and its icon in the kitty.desktop file(s)
+		sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
+		sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
+fi
+
+# Install neovim and brew if on Mac
+if [ "$OSTYPE" == "linux-gnu"* ]; then
+		sudo snap install nvim --classic
+elif [ "$OSTYPE" == "darwin" ]; then
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+		brew install neovim
+fi
+
+# Configure git preferences
 git config --global alias.s status
 git config --global init.defaultBranch main
+git config --global user.email "$EMAIL"
+git config --global user.name "$FIRSTNAME $LASTNAME"
+
+# Copy config files
+cp ./nvim/init.vim ~/.config/nvim
+cp ./kitty/kitty.conf ~/.config/kitty
+

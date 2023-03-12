@@ -32,7 +32,7 @@ $ source .zshrc
 ### 1. Install the prerequisite applications with `apt`
 
 ```bash
-sudo apt install curl git neovim zsh
+sudo apt install curl git zsh
 ```
 
 ### 2. Run the install script
@@ -40,9 +40,13 @@ This will do the following
     1. Install [OhMyZsh](https://ohmyz.sh/#install)
     2. Change the current shell from Bash to Zsh
     3. Move the `.zshrc` configuration file to the home directory
+		4. Install the kitty terminal
+		5. Install neovim
+		6. Move configuration files to their respective directories
 
+> sudo is needed for snap install
 ```bash
-$ chmod +x install.sh && ./install.sh
+$ chmod +x install.sh && sudo ./install.sh
 ```
 
 ### 3. Generate SSH keys
@@ -53,19 +57,6 @@ $ ssh-keygen -t ed25519 -C "your_email@example.com"
 
 ### 4. Install the Hack font
 1. Follow the instructions [here](https://github.com/source-foundry/Hack#quick-installation)
-
-### 5. Install Alacritty Terminal
-1. Follow the instructions [here](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
-2. Copy the configuration file
-```bash
-$ mkdir ~/.config/alacritty && cp alacritty.yml ~/.config/alacritty
-```
-
-### 6. Configure git credentials
-```bash
-$ git config --global user.email "$EMAIL"
-$ git config --global user.name "$FIRSTNAME $LASTNAME"
-```
 
 ### 7. Install `nvm` Node Version Manager
 1. Follow the instructions [here](https://github.com/nvm-sh/nvm#installing-and-updating)
