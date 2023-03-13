@@ -44,3 +44,9 @@ git config --global user.name "$FIRSTNAME $LASTNAME"
 cp ./nvim/init.vim ~/.config/nvim
 cp ./kitty/kitty.conf ~/.config/kitty
 
+# Install the latest version of nvm
+most_recent_nvm=$(curl -s https://raw.githubusercontent.com/nvm-sh/nvm/master/package.json | grep '"version":' | awk 'BEGIN { FS = "\"" } ; { print $4 }')
+curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/v$most_recent_nvm/install.sh" | bash
+
+source ~/.zshrc
+
