@@ -115,5 +115,8 @@ alias kitty="~/.local/kitty.app/bin/kitty"
 
 alias vim="nvim"
 
+# Get local IPv4 address
 alias lip="ip -o route get to 8.8.8.8 | sed -n 's/.*src \([0-9.]\+\).*/\1/p'"
 
+# Git push while setting the origin upstream branch to the current branch name
+alias gitpu="git push -u origin $(git branch --show-current)"
