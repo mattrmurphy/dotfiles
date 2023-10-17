@@ -205,7 +205,7 @@ prompt_hg() {
 # Dir: current working directory
 prompt_dir() {
   DIR_PATH='%~'
-  if [ -d '.git' ]; then
+  if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     DIR_PATH='%c'
   fi
 
