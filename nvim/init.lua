@@ -36,9 +36,9 @@ vim.call('plug#end')
 vim.cmd.colorscheme "catppuccin"
 
 -- Find files using Telescope command-line sugar."
-
--- nnoremap <A-p> <cmd>Telescope find_files<cr>
-vim.api.nvim_set_keymap('n', '<A-p>', '<cmd>Telescope find_files<cr>', { noremap = true, silent = true })
+-- TODO: Update second argument based on OS
+-- MacOS: <C-p>, Linux: <A-p>
+vim.api.nvim_set_keymap('n', '<C-p>', ':Telescope find_files<CR>', {noremap = true})
 
 vim.opt.number = true
 vim.opt.relativenumber = true
