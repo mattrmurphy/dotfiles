@@ -1,45 +1,41 @@
+--- VIMPLUG SETUP ---
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
+-- LSP Setup
+Plug 'neovim/nvim-lspconfig'
+
 -- Adds a status line at the bottom of the vim window
 Plug 'vim-airline/vim-airline'
 
+-- Telescope and dependencies
 Plug 'nvim-lua/plenary.nvim'
-Plug('nvim-telescope/telescope.nvim', { tag = '0.1.1' })
+Plug('nvim-telescope/telescope.nvim', { tag = '0.1.5' })
 
 -- Fuzzy finder like Control+P in VSCode
 -- Plug('junegunn/fzf', { do = { -> fzf#install() } })
 Plug('junegunn/fzf', {['do'] = vim.fn['fzf#install']})
 
--- Code completion
-Plug('neoclide/coc.nvim', { branch = 'release'})
-
 -- Indent Guides
 Plug 'nathanaelkane/vim-indent-guides'
-
--- Language Pack
-Plug 'sheerun/vim-polyglot'
-
--- Go things
--- Plug 'fatih/vim-go'
 
 -- Treesitter/highlighting
 Plug ('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn[':TSUpdate']})
 
-
--- JavaScript Syntax
-Plug 'pangloss/vim-javascript'
-
--- ESLint
-Plug 'eslint/eslint'
-
+--- THEME PLUGINS --
 -- Gruvbox color theme
 -- Plug 'morhetz/gruvbox'
 -- Catppuccin color theme
 Plug('catppuccin/nvim', { as = 'catppuccin' })
 
 vim.call('plug#end')
+---
 
+--- LSP SETUP ---
+require'lspconfig'.tsserver.setup{}
+---
+
+--- TREESITTER SETUP ---
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
   ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "go", "javascript", "rust" },
@@ -81,17 +77,27 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+---
 
+--- THEME ---
 vim.cmd.colorscheme "catppuccin"
+---
 
+--- TELESCOPE KEYMAPS ---
 -- Find files using Telescope command-line sugar."
--- TODO: Update second argument based on OS
--- MacOS: <C-p>, Linux: <A-p>
 vim.api.nvim_set_keymap('n', '<C-p>', ':Telescope find_files<CR>', {noremap = true})
+---
 
+--- BUFFER KEYMAPS ---
+-- Go to the previous buffer in the buffer list
+vim.api.nvim_set_keymap('n', '<C-[>', ':bN<CR>', { noremap = true, silent = true })
+-- Go to the next buffer in the buffer list
+vim.api.nvim_set_keymap('n', '<C-]>', ':bn<CR>', { noremap = true, silent = true })
+---
+
+--- VIM OPTIONS ---
 vim.opt.number = true
 vim.opt.relativenumber = true
--- vim.opt.showbreak = +++
 vim.opt.showmatch = true
 vim.opt.visualbell = true
 
@@ -110,3 +116,4 @@ vim.opt.ruler = true
 
 vim.opt.undolevels = 1000
 vim.opt.backspace = { 'indent', 'eol', 'start' }
+---
