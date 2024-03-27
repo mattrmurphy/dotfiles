@@ -1,4 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# Required dependencies
+dependencies=(curl git sed awk)
+
 
 # Install OhMyZsh and change current shell to Zsh.
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && chsh -s $(which zsh)
@@ -26,13 +30,14 @@ if [ "$OSTYPE" == "linux-gnu"* ] && ! command -v kitty &> /dev/null; then
 		sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
 fi
 
+# TODO: Curl neovim and build from source
 # Install neovim and brew if on Mac
-if [ "$OSTYPE" == "linux-gnu"* ]; then
-		sudo snap install nvim --classic
-elif [ "$OSTYPE" == "darwin" ]; then
-		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-		brew install neovim
-fi
+# if [ "$OSTYPE" == "linux-gnu"* ]; then
+# 		sudo snap install nvim --classic
+# elif [ "$OSTYPE" == "darwin" ]; then
+# 		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# 		brew install neovim
+# fi
 
 # Configure git preferences
 git config --global alias.s status
@@ -41,7 +46,7 @@ git config --global user.email "$EMAIL"
 git config --global user.name "$FIRSTNAME $LASTNAME"
 
 # Copy config files
-cp ./nvim/init.vim ~/.config/nvim
+cp ./nvim/init.lua ~/.config/nvim
 cp ./kitty/kitty.conf ~/.config/kitty
 
 # Install the latest version of nvm
