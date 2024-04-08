@@ -5,8 +5,8 @@ vim.call('plug#begin')
 -- LSP Setup
 Plug 'neovim/nvim-lspconfig'
 
--- Adds a status line at the bottom of the vim window
-Plug 'vim-airline/vim-airline'
+-- Lualine statusline
+Plug 'hoob3rt/lualine.nvim'
 
 -- Telescope and dependencies
 Plug 'nvim-lua/plenary.nvim'
@@ -33,6 +33,14 @@ vim.call('plug#end')
 
 --- LSP SETUP ---
 require'lspconfig'.tsserver.setup{}
+---
+
+--- LUALINE SETUP ---
+require'lualine'.setup {
+  options = {
+      theme = 'auto',
+  }
+}
 ---
 
 --- TREESITTER SETUP ---
