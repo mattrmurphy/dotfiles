@@ -121,7 +121,7 @@ vim.opt.smarttab =  true
 vim.opt.softtabstop = 4
 
 vim.opt.ruler = true
-
+vim.opt.signcolumn = 'yes'
 vim.opt.undolevels = 1000
 vim.opt.backspace = { 'indent', 'eol', 'start' }
 ---
