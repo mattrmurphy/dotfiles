@@ -41,6 +41,11 @@ fi
 
 # Configure git preferences
 git config --global alias.s status
+git config --global alias.co checkout
+git config --global alias.rn "!git branch -M $(git branch --show-current)"
+git config --global alias.pu "!git push -u origin $(git branch --show-current)"
+git config --global alias.fp "!git fetch && git pull"
+
 git config --global init.defaultBranch main
 git config --global user.email "$EMAIL"
 git config --global user.name "$FIRSTNAME $LASTNAME"
