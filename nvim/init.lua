@@ -19,9 +19,6 @@ Plug 'hrsh7th/vim-vsnip'
 
 Plug 'MunifTanjim/eslint.nvim'
 
--- Adds a status line at the bottom of the vim window
-Plug 'vim-airline/vim-airline'
-
 -- Telescope and dependencies
 Plug 'nvim-lua/plenary.nvim'
 Plug('nvim-telescope/telescope.nvim', { tag = '0.1.5' })
@@ -126,13 +123,13 @@ settings = {
 --- ESLINT SETUP ---
 require'eslint'.setup({
     bin = 'eslint',
-code_actions = {
-    enable = true,
-    apply_on_save = {
-      enable = true,
-      types = { "directive", "problem", "suggestion", "layout" },
+    code_actions = {
+        enable = true,
+        apply_on_save = {
+          enable = true,
+          types = { "directive", "problem", "suggestion", "layout" },
+        }
     }
-}
 })
 ---
 
