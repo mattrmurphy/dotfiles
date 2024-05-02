@@ -5,6 +5,7 @@ vim.call('plug#begin')
 -- LSP Setup
 Plug 'neovim/nvim-lspconfig'
 
+
 -- LSP Autocompletion
 Plug 'hrsh7th/nvim-cmp'
 -- - Current buffer
@@ -18,6 +19,10 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
 Plug 'MunifTanjim/eslint.nvim'
+
+-- Lualine statusline
+Plug 'hoob3rt/lualine.nvim'
+
 
 -- Telescope and dependencies
 Plug 'nvim-lua/plenary.nvim'
@@ -133,6 +138,14 @@ require'eslint'.setup({
 })
 ---
 
+--- LUALINE SETUP ---
+require'lualine'.setup {
+  options = {
+      theme = 'auto',
+  }
+}
+---
+
 --- TREESITTER SETUP ---
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
@@ -211,7 +224,7 @@ vim.opt.smarttab =  true
 vim.opt.softtabstop = 4
 
 vim.opt.ruler = true
-
+vim.opt.signcolumn = 'yes'
 vim.opt.undolevels = 1000
 vim.opt.backspace = { 'indent', 'eol', 'start' }
 ---
