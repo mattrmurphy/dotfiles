@@ -9,6 +9,7 @@ brew 'curl'
 brew 'git'
 brew 'hugo'
 brew 'jq'
+brew 'neovim'
 brew 'pandoc'
 brew 'ripgrep'
 brew 'svn' # Needed to install fonts
