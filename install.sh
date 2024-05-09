@@ -1,8 +1,17 @@
 #!/usr/bin/env bash
 
+EMAIL=""
 # Required dependencies
 dependencies=(curl git sed awk)
 
+# Prompt for email and set as global git config
+echo "Enter your GitHub email: "
+read EMAIL
+
+git config --global init.defaultBranch main
+if [ "$EMAIL" -ne "" ]; then
+    git config --global user.email "$EMAIL"
+fi
 
 # Install OhMyZsh and change current shell to Zsh.
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && chsh -s $(which zsh)
@@ -38,17 +47,6 @@ fi
 # 		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # 		brew install neovim
 # fi
-
-# Configure git preferences
-git config --global alias.s status
-git config --global alias.co checkout
-git config --global alias.rn "!git branch -M $(git branch --show-current)"
-git config --global alias.pu "!git push -u origin $(git branch --show-current)"
-git config --global alias.fp "!git fetch && git pull"
-
-git config --global init.defaultBranch main
-git config --global user.email "$EMAIL"
-git config --global user.name "$FIRSTNAME $LASTNAME"
 
 # Copy config files
 cp ./nvim/init.lua ~/.config/nvim
