@@ -206,6 +206,13 @@ vim.api.nvim_set_keymap('n', '<C-[>', ':bN<CR>', { noremap = true, silent = true
 vim.api.nvim_set_keymap('n', '<C-]>', ':bn<CR>', { noremap = true, silent = true })
 ---
 
+--- MISC KEYMAPS ---
+vim.api.nvim_set_keymap('n', '<C-d>', '<C-d>zz', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-u>', '<C-u>zz', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'n', 'nzz', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'N', 'Nzz', { noremap = true, silent = true })
+
+
 --- VIM OPTIONS ---
 vim.opt.number = true
 vim.opt.relativenumber = true
