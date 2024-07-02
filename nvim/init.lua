@@ -46,6 +46,13 @@ Plug('catppuccin/nvim', { as = 'catppuccin' })
 
 vim.call('plug#end')
 
+--- Lualine setup ---
+require('lualine').setup {
+    options = {
+	theme = 'auto',
+    },
+}
+
 --- CMP COMPLETION SETUP ---
 local has_words_before = function()
   unpack = unpack or table.unpack
@@ -111,7 +118,7 @@ require'lspconfig'.gopls.setup{
 	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {buffer=0})
 	vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, {buffer=0})
     end,
-settings = {
+    settings = {
     gopls = {
       analyses = {
         unusedparams = true,
