@@ -1,8 +1,11 @@
 [alias]
-	s = status
-	co = checkout
-	rn = "!git branch -M $(git branch --show-current)" 
-	pu = "!git push -u origin $(git branch --show-current)"
-	fp = "!git fetch && git pull" 
+    s = status
+    co = checkout
+    rn = "!git branch -M $(git branch --show-current)" 
+    pu = "!git push -u origin $(git branch --show-current)"
+    fp = "!git fetch && git pull" 
 [init]
-	defaultBranch = main
+    defaultBranch = main
+[core]
+    editor = vim
+    pager = delta
