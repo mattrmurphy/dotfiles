@@ -46,6 +46,10 @@ Plug('catppuccin/nvim', { as = 'catppuccin' })
 
 vim.call('plug#end')
 
+require('catppuccin').setup({
+    transparent_background = true,
+})
+
 --- Lualine setup ---
 require('lualine').setup {
     options = {
