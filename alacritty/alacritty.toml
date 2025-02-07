@@ -13,9 +13,12 @@ family = "Hack"
 family = "FiraMono Nerd Font"
 
 [window]
+# "Buttonless" only available on MacOS
 decorations = "Buttonless"
+# "None" for use with Linux
+#decorations = "None"
 dynamic_title = true
-startup_mode = "Windowed"
+startup_mode = "Maximized"
 opacity = 0.9
 
 [window.padding]
