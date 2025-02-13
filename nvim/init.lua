@@ -212,44 +212,5 @@ require'nvim-treesitter.configs'.setup {
 vim.cmd.colorscheme "catppuccin"
 ---
 
---- TELESCOPE KEYMAPS ---
--- Find files using Telescope command-line sugar."
-vim.api.nvim_set_keymap('n', '<C-p>', ':Telescope find_files<CR>', {noremap = true})
----
-
---- BUFFER KEYMAPS ---
--- Go to the previous buffer in the buffer list
-vim.api.nvim_set_keymap('n', '<C-[>', ':bN<CR>', { noremap = true, silent = true })
--- Go to the next buffer in the buffer list
-vim.api.nvim_set_keymap('n', '<C-]>', ':bn<CR>', { noremap = true, silent = true })
----
-
---- MISC KEYMAPS ---
-vim.api.nvim_set_keymap('n', '<C-d>', '<C-d>zz', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-u>', '<C-u>zz', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'n', 'nzz', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'N', 'Nzz', { noremap = true, silent = true })
-
-
---- VIM OPTIONS ---
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.showmatch = true
-vim.opt.visualbell = true
-
-vim.opt.hlsearch = true
-vim.opt.smartcase = true
-vim.opt.ignorecase = true
-vim.opt.incsearch = true
-
-vim.opt.autoindent = true
-vim.opt.shiftwidth = 4
-vim.opt.smartindent = true
-vim.opt.smarttab =  true
-vim.opt.softtabstop = 4
-
-vim.opt.ruler = true
-vim.opt.signcolumn = 'yes'
-vim.opt.undolevels = 1000
-vim.opt.backspace = { 'indent', 'eol', 'start' }
----
+require('config.keymaps')
+require('config.options')
