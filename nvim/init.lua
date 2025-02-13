@@ -46,10 +46,6 @@ Plug('catppuccin/nvim', { as = 'catppuccin' })
 
 vim.call('plug#end')
 
-require('catppuccin').setup({
-    transparent_background = true,
-})
-
 
 --- CMP COMPLETION SETUP ---
 local has_words_before = function()
@@ -194,10 +190,8 @@ require'nvim-treesitter.configs'.setup {
 }
 ---
 
---- THEME ---
-vim.cmd.colorscheme "catppuccin"
----
 require('plugins.lualine')
+require('plugins.theme')
 
 require('config.keymaps')
 require('config.options')
