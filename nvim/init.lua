@@ -50,12 +50,6 @@ require('catppuccin').setup({
     transparent_background = true,
 })
 
---- Lualine setup ---
-require('lualine').setup {
-    options = {
-	theme = 'auto',
-    },
-}
 
 --- CMP COMPLETION SETUP ---
 local has_words_before = function()
@@ -156,14 +150,6 @@ require'eslint'.setup({
 })
 ---
 
---- LUALINE SETUP ---
-require'lualine'.setup {
-  options = {
-      theme = 'auto',
-  }
-}
----
-
 --- TREESITTER SETUP ---
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
@@ -211,6 +197,7 @@ require'nvim-treesitter.configs'.setup {
 --- THEME ---
 vim.cmd.colorscheme "catppuccin"
 ---
+require('plugins.lualine')
 
 require('config.keymaps')
 require('config.options')
