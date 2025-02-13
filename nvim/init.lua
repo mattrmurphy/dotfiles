@@ -1,11 +1,9 @@
---- VIMPLUG SETUP ---
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
+
 -- LSP Setup
 Plug 'neovim/nvim-lspconfig'
-
-
 -- LSP Autocompletion
 Plug 'hrsh7th/nvim-cmp'
 -- - Current buffer
@@ -17,27 +15,17 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 -- - Snippets Plugin
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
-
 Plug 'MunifTanjim/eslint.nvim'
-
--- Lualine statusline
 Plug 'hoob3rt/lualine.nvim'
-
-
 -- Telescope and dependencies
 Plug 'nvim-lua/plenary.nvim'
 Plug('nvim-telescope/telescope.nvim', { tag = '0.1.5' })
-
 -- Fuzzy finder like Control+P in VSCode
--- Plug('junegunn/fzf', { do = { -> fzf#install() } })
 Plug('junegunn/fzf', {['do'] = vim.fn['fzf#install']})
-
 -- Indent Guides
 Plug 'nathanaelkane/vim-indent-guides'
-
 -- Treesitter/highlighting
 Plug ('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn[':TSUpdate']})
-
 --- THEME PLUGINS --
 -- Gruvbox color theme
 -- Plug 'morhetz/gruvbox'
