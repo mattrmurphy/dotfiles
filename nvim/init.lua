@@ -49,23 +49,12 @@ vim.call('plug#end')
 --- FORMAT ON SAVE FOR GO FILES ---
 vim.cmd([[autocmd FileType go autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
 
---- ESLINT SETUP ---
-require'eslint'.setup({
-    bin = 'eslint',
-    code_actions = {
-        enable = true,
-        apply_on_save = {
-          enable = true,
-          types = { "directive", "problem", "suggestion", "layout" },
-        }
-    }
-})
-
 require('plugins.treesitter')
 require('plugins.lspconfig')
 require('plugins.cmp')
 require('plugins.lualine')
 require('plugins.theme')
+require('plugins.eslint')
 
 require('config.keymaps')
 require('config.options')
