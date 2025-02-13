@@ -46,9 +46,6 @@ Plug('catppuccin/nvim', { as = 'catppuccin' })
 
 vim.call('plug#end')
 
---- FORMAT ON SAVE FOR GO FILES ---
-vim.cmd([[autocmd FileType go autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
-
 require('plugins.treesitter')
 require('plugins.lspconfig')
 require('plugins.cmp')
@@ -58,3 +55,4 @@ require('plugins.eslint')
 
 require('config.keymaps')
 require('config.options')
+require('config.commands')
