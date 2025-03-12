@@ -1,6 +1,8 @@
 --- TELESCOPE KEYMAPS ---
 -- Find files using Telescope command-line sugar."
 vim.api.nvim_set_keymap('n', '<C-p>', ':Telescope find_files<CR>', {noremap = true})
+-- Live grep files
+vim.api.nvim_set_keymap('n', '<C-f>', ':Telescope live_grep<CR>', {noremap = true})
 ---
 
 --- BUFFER KEYMAPS ---
