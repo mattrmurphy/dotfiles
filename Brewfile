@@ -15,6 +15,7 @@ brew 'pandoc'
 brew 'ripgrep'
 brew 'svn' # Needed to install fonts
 brew 'tmux'
+brew 'lazygit'
 
 # Development
 brew 'yarn'
