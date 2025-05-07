@@ -78,6 +78,7 @@ echo "Installing additional tools"
 
 if [ "$OSTYPE" == "linux-gnu"* ]; then
     sudo apt install fzf jq pandoc ripgrep tmux hugo -y
+    # TODO: add lazygit install https://github.com/jesseduffield/lazygit?tab=readme-ov-file#installation
 fi
 
 # TODO: Programatically do this
