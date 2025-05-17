@@ -86,6 +86,7 @@ fi
 # Perhaps symlink them to this config instead of copying
 cp ./nvim/init.lua ~/.config/nvim
 cp ./kitty/kitty.conf ~/.config/kitty
+cp ./wallpapers -r ~/wallpapers
 
 source ~/.zshrc
 
