@@ -189,6 +189,7 @@ gaps inner 3
 # finds out, if available)
 # Launch polybar script
 exec --no-startup-id bash ~/.config/polybar/launch.sh
+exec --no-startup-id feh --bg-scale ~/wallpapers/gits.jpg
 
 bar {
     mode hide
