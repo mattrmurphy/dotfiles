@@ -77,7 +77,7 @@ curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/v$most_recent_nvm/install
 echo "Installing additional tools"
 
 if [ "$OSTYPE" == "linux-gnu"* ]; then
-    sudo apt install fzf jq pandoc ripgrep tmux hugo -y
+    sudo apt install fzf jq pandoc ripgrep tmux hugo feh -y
     # TODO: add lazygit install https://github.com/jesseduffield/lazygit?tab=readme-ov-file#installation
 fi
 
