@@ -19,6 +19,7 @@ brew 'lazygit'
 
 # Development
 brew 'yarn'
+brew 'luarocks'
 
 # Apps
 cask 'docker'
