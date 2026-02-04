@@ -16,6 +16,30 @@ vim.lsp.config('ts_ls', {
   },
 })
 
+vim.lsp.config('lua_ls', {
+  cmd = { 'lua-language-server' },
+  filetypes = { 'lua' },
+  -- Sets the "workspace" to the directory where any of these files is found.
+  root_markers = {
+    ".luarc.json",
+    ".luarc.jsonc",
+    ".luacheckrc",
+    ".stylua.toml",
+    ".git",
+  },
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT',
+      },
+	  diagnostics = {
+		  globals = { "vim" }
+	  }
+    }
+  }
+})
+
+vim.lsp.enable('lua_ls')
 vim.lsp.enable('ts_ls')
 
 require'lspconfig'.gopls.setup{
