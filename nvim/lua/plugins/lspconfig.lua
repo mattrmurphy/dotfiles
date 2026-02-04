@@ -1,4 +1,3 @@
-require'lspconfig'.ts_ls.setup{}
 vim.lsp.config('ts_ls', {
   init_options = {
     plugins = {
@@ -42,7 +41,7 @@ vim.lsp.config('lua_ls', {
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('ts_ls')
 
-require'lspconfig'.gopls.setup{
+vim.lsp.config('gopls', {
     on_attach = function()
 	vim.keymap.set('n', 'K', vim.lsp.buf.hover, {buffer=0})
 	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {buffer=0})
@@ -58,7 +57,7 @@ require'lspconfig'.gopls.setup{
       gofumpt = true,
     },
   },
-}
+})
 
 vim.diagnostic.config({
   virtual_text = true,
